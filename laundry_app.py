@@ -8,7 +8,7 @@ from oauth2client.service_account import ServiceAccountCredentials # Remove this
 from PIL import Image
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
-from google.colab import auth # Add this line
+#from google.colab import auth # Add this line
 import google.auth # Add this line
 import json
 from google.oauth2.service_account import Credentials
