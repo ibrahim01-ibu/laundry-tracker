@@ -29,7 +29,7 @@ client = gspread.authorize(credentials) # Add this line
 
 
 # Open the sheet
-sheet = client.open("Laundry_Records").sheet1
+sheet = client.open("Laundry_Records_New").sheet1
 
 # Google Drive service (for image upload)
 drive_service = build('drive', 'v3', credentials=credentials) # Use the same credentials
