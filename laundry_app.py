@@ -3,7 +3,7 @@
 import streamlit as st
 import datetime
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials # Remove this line
+#from oauth2client.service_account import ServiceAccountCredentials # Remove this line
 # import os # Already imported
 from PIL import Image
 from googleapiclient.discovery import build
@@ -19,7 +19,7 @@ creds_dict = st.secrets["gcp_service_account"]
 creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
 # Google Sheets & Drive auth
 # scope = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/spreadsheets'] # Remove this line
-creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Remove this line
+#creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Remove this line
 # client = gspread.authorize(creds) # Remove this line
 
 auth.authenticate_user() # Add this line
