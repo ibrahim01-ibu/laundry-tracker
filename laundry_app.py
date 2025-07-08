@@ -22,7 +22,7 @@ creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
 #creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Remove this line
 # client = gspread.authorize(creds) # Remove this line
 
-auth.authenticate_user() # Add this line
+#auth.authenticate_user() # Add this line
 credentials, project_id = google.auth.default() # Add this line
 client = gspread.authorize(credentials) # Add this line
 
