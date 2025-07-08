@@ -3,21 +3,25 @@
 import streamlit as st
 import datetime
 import gspread
-# from oauth2client.service_account import ServiceAccountCredentials # Remove this line
+from oauth2client.service_account import ServiceAccountCredentials # Remove this line
 # import os # Already imported
 from PIL import Image
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from google.colab import auth # Add this line
 import google.auth # Add this line
-
+import json
+from google.oauth2.service_account import Credentials
 
 # ------------------ SETUP GOOGLE SHEETS + DRIVE ------------------ #
 
 # Google Sheets & Drive auth
 # scope = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/spreadsheets'] # Remove this line
-# creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Remove this line
+creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Remove this line
 # client = gspread.authorize(creds) # Remove this line
+
+creds_dict = st.secrets["gcp_service_account"]
+creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
 
 auth.authenticate_user() # Add this line
 credentials, project_id = google.auth.default() # Add this line
