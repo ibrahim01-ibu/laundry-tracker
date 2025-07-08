@@ -15,8 +15,9 @@ from google.oauth2.service_account import Credentials
 
 # ------------------ SETUP GOOGLE SHEETS + DRIVE ------------------ #
 scope = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
-creds_dict = st.secrets["gcp_service_account"]
-creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
+creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scope)
+#creds_dict = st.secrets["gcp_service_account"]#
+#creds = Credentials.from_service_account_info(creds_dict, scopes=scope)#
 # Google Sheets & Drive auth
 # scope = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/spreadsheets'] # Remove this line
 #creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # Remove this line
